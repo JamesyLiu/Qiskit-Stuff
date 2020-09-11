@@ -1,0 +1,10 @@
+from qiskit import*
+%matplotlib inline
+from qiskit.tools.visualization import plot_histogram
+circuit = QuantumCircuit(6+1,6)
+secretnumber = '101001'
+#circuit.h([0,1,2,3,4,5])
+circuit.h(range(len(secretnumber)))
+circuit.x(len(secretnumber))
+circuit.h(len(secretnumber))
+circuit.barrier()
